@@ -1,0 +1,5 @@
+db.sqlite3
+*.pyc
+Muysca_bon_Site/utils.py
+__pycache__/
+.DS_Store
