@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Registro_censo
+from .forms import create_registro_censo
 
-# Create your views here.
+
+def home(request):
+    return render(request, 'censo/home.html')
