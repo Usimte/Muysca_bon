@@ -7,11 +7,12 @@ from .utilidades import *
 
 class Registro_censo(models.Model):
     vigencia = models.DateField(auto_now=True)
-    resguardo = models.CharField(max_length=10,blank=True)
-    comunidad_indigena = models.CharField(max_length=10,blank=True)
+    resguardo = models.CharField(max_length=10, blank=True)
+    comunidad_indigena = models.CharField(max_length=10, blank=True)
     familia = models.CharField(max_length=10)
     tipo_identificacion = models.CharField(
-        max_length=6, choices=TIPO_IDENTIFICACION_CHOICES, default=CEDULA_CIUDADANIA)
+        max_length=6, choices=TIPO_IDENTIFICACION_CHOICES,
+        default=CEDULA_CIUDADANIA)
     numero_documento = models.CharField(max_length=10)
     nombres = models.CharField(max_length=60)
     apellidos = models.CharField(max_length=60)
@@ -22,7 +23,7 @@ class Registro_censo(models.Model):
     genero = models.CharField(max_length=2, choices=GENERO_CHOICES)
     estado_civil = models.CharField(
         max_length=2, choices=ESTADO_CIVIL_CHOICES, default=SOLTERO)
-    profesion = models.CharField(blank=True,max_length=10)
+    profesion = models.CharField(blank=True, max_length=10)
     escolaridad = models.CharField(
         max_length=3, choices=ESCOLARIDAD_CHOICES, default=PRIMARIA)
     integrantes = models.IntegerField()

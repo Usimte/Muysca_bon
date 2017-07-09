@@ -64,8 +64,8 @@ SECUNDARIA = "SE"
 UNIVERSITARIA = "UN"
 NINGUNO = "NI"
 ESCOLARIDAD_CHOICES = (
-(PRIMARIA, "Primaria"),
-(SECUNDARIA, "Secundaria"),
-(UNIVERSITARIA, "Universitaria"),
-(NINGUNO, "Ninguno")
-)
+    (PRIMARIA, "Primaria"),
+    (SECUNDARIA, "Secundaria"),
+    (UNIVERSITARIA, "Universitaria"),
+    (NINGUNO, "Ninguno")
+    )
