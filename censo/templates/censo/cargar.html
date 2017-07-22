@@ -1,5 +1,23 @@
 {% extends 'censo/base.html' %}
 
+{% block scripts %}
+<script type="text/javascript">
+  $(function() {
+    $( ".datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1990:2025",
+      // You can put more options here.
+
+    });
+  });
+</script>
+{% endblock %}
+
 {% block content %}
-Formulario
+<form class="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit"> Cargar </button>
+</form>
 {% endblock %}

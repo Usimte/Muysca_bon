@@ -1,12 +1,13 @@
 from django import forms
-from .models import Registro_censo
+from .models import censo_archivo
 
 
-class create_registro_censo(forms.ModelForm):
+class upload_archivo_censo(forms.ModelForm):
 
     class Meta():
-        model = Registro_censo
-        fields = []
+        model = censo_archivo
+        fields = ['archivo', 'fecha_censo']
 
     def __init__(self, *args, **kwargs):
-        super(create_sr, self).__init__(*args, **kwargs)
+        super(upload_archivo_censo, self).__init__(*args, **kwargs)
+        self.fields['fecha_censo'].widget.attrs['class'] = 'datepicker'

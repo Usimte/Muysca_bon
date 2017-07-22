@@ -1,11 +1,31 @@
 from django.db import models
+from django.utils import timezone
 # from django.utils import timezone
 from .utilidades import *
+from openpyxl import Workbook
 
 # Create your models here.
 
 
-class Registro_censo(models.Model):
+class censo_archivo(models.Model):
+    '''Clase de archivo censo
+
+    Es el formato cargado al sistema e historial de censos existentes'''
+    archivo = models.FileField(upload_to='formatos/')
+    fecha_subida = models.DateTimeField(default=timezone.now)
+    fecha_censo = models.DateField()
+
+    # TODO: función para carga de archivos
+    def cargar_registros(self):
+        '''Carga registros a partir de un formato subido por el usuario.'''
+        None
+
+
+class registro_censo(models.Model):
+    '''Clase de registro de censo.
+
+    Está basado en el formato expedido por el ministerio del interior
+    de la república de Colombia'''
     vigencia = models.DateField(auto_now=True)
     resguardo = models.CharField(max_length=10, blank=True)
     comunidad_indigena = models.CharField(max_length=10, blank=True)
