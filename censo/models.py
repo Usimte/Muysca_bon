@@ -20,6 +20,8 @@ class censo_archivo(models.Model):
         '''Carga registros a partir de un formato subido por el usuario.'''
         None
 
+    def __str__(self):
+        return censo + " " + str(fecha_censo.year)
 
 class registro_censo(models.Model):
     '''Clase de registro de censo.
